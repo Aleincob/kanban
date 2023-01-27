@@ -6,7 +6,7 @@
         [cdkDropListData]="ideas"
         [cdkDropListConnectedTo]="[doneList, researchList, todoList]"
         (cdkDropListDropped)="drop($event)">
-            <div class="task" *ngFor="let item of ideas" cdkDrag>{{item}}>Some random ideas</div>
+            <div class="task" *ngFor="let item of ideas" cdkDrag>{{item}}</div>
         </div>
         
     </div>
@@ -18,7 +18,7 @@
         [cdkDropListData]="research"
         [cdkDropListConnectedTo]="[ideasList, doneList, todoList]"
         (cdkDropListDropped)="drop($event)">
-            <div class="task" *ngFor="let item of research" cdkDrag>{{item}}>Lorem Ipsum</div>
+            <div class="task" *ngFor="let item of research" cdkDrag>{{item}}</div>
         </div>
     </div>
 
@@ -30,7 +30,7 @@
         [cdkDropListData]="todo"
         [cdkDropListConnectedTo]="[doneList, researchList, ideasList]"
         (cdkDropListDropped)="drop($event)">
-            <div class="task" *ngFor="let item of todo" cdkDrag>{{item}}>Get to work</div>
+            <div class="task" *ngFor="let item of todo" cdkDrag>{{item}}</div>
         </div>
     </div>
     <div class="container">
@@ -40,7 +40,7 @@
         [cdkDropListData]="done"
         [cdkDropListConnectedTo]="[ideasList, researchList, todoList]"
         (cdkDropListDropped)="drop($event)">
-            <div class="task" *ngFor="let item of done" cdkDrag>{{item}}>Get up</div>
+            <div class="task" *ngFor="let item of done" cdkDrag>{{item}}</div>
         </div>      
     </div>
    
