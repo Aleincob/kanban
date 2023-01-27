@@ -1,0 +1,32 @@
+.main-container {
+    display: flex;
+    flex-direction: row;
+}
+.container {
+    height: 570px;
+    width: 320px;
+    background: rgb(255, 255, 255, 0.5);
+    margin: 50px 20px 0 50px;
+
+}
+.title-container {
+    background: rgb(255, 255, 255, 0.0);
+    margin-left: 15px;
+    padding-top: 15px;
+    text-transform: uppercase;
+}
+.task-container {
+    background: rgb(255, 255, 255, 0.9);
+    display: flex;
+    flex-grow: 1;
+    margin: 15px 10px 0 10px;
+    border-radius: 8px;
+    -webkit-box-shadow: 5px 5px 15px -3px rgba(0,0,0,0.47); 
+box-shadow: 5px 5px 15px -3px rgba(0,0,0,0.47);
+}
+.task {
+    background: rgb(255, 255, 255, 0.5);
+    display: flex;
+    padding: 15px 12px;
+    font-size: 13px;
+}
