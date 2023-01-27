@@ -1,74 +1,47 @@
 <div class="main-container">
     <div class="container">
         <h3 class="title-container">Ideas</h3>
-        <div class="task-container">
-            <p class="task">Some random ideas</p>
-        </div>
-        <div class="task-container">
-            <p class="task">This is another random idea</p>
-        </div>
-        <div class="task-container">
-            <p class="task">Build an awesome application</p>
-        </div>
-        <div class="task-container">
-            <p class="task">Something to do</p>
-        </div>
-        <div class="task-container">
-            <p class="task">More big ideas</p>
-        </div>
-        <div class="task-container">
-            <p class="task">Too many ideas</p>
+        <div class="task-container" cdkDropList
+        #ideasList="cdkDropList"
+        [cdkDropListData]="ideas"
+        [cdkDropListConnectedTo]="[doneList, researchList, todoList]"
+        (cdkDropListDropped)="drop($event)">
+            <div class="task" *ngFor="let item of ideas" cdkDrag>{{item}}>Some random ideas</div>
         </div>
         
     </div>
 
     <div class="container">
         <h3 class="title-container">Research</h3>
-        <div class="task-container">
-            <p class="task">Lorem Ipsum</p>
-        </div>
-        <div class="task-container">
-            <p class="task">Kung fu</p>
-        </div>
-        <div class="task-container">
-            <p class="task">This must go in the Research column</p>
+        <div class="task-container" cdkDropList
+        #researchList="cdkDropList"
+        [cdkDropListData]="research"
+        [cdkDropListConnectedTo]="[ideasList, doneList, todoList]"
+        (cdkDropListDropped)="drop($event)">
+            <div class="task" *ngFor="let item of research" cdkDrag>{{item}}>Lorem Ipsum</div>
         </div>
     </div>
 
 
     <div class="container">
         <h3 class="title-container">To Do</h3>
-        <div class="task-container">
-            <p class="task">Get to work</p>
+        <div class="task-container" cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="todo"
+        [cdkDropListConnectedTo]="[doneList, researchList, ideasList]"
+        (cdkDropListDropped)="drop($event)">
+            <div class="task" *ngFor="let item of todo" cdkDrag>{{item}}>Get to work</div>
         </div>
-        <div class="task-container">
-            <p class="task">First get a job</p>
-        </div>
-        <div class="task-container">
-            <p class="task">Fall asleep</p>
-        </div>
-        <div class="task-container">
-            <p class="task">Go home</p>
-        </div>
-        <div class="task-container">
-            <p class="task">Pick up groceries</p>
-         </div>
     </div>
     <div class="container">
         <h3 class="title-container">Done</h3>
-        <div class="task-container">
-            <p class="task">Get up</p>
-        </div>
-        <div class="task-container">
-            <p class="task">Brush teeth</p>
-        </div>
-        <div class="task-container">
-            <p class="task">Take a shower</p>
-        </div>
-        <div class="task-container">
-            <p class="task">Pet cats</p>
-        </div>
-        
+        <div class="task-container" cdkDropList
+        #doneList="cdkDropList"
+        [cdkDropListData]="done"
+        [cdkDropListConnectedTo]="[ideasList, researchList, todoList]"
+        (cdkDropListDropped)="drop($event)">
+            <div class="task" *ngFor="let item of done" cdkDrag>{{item}}>Get up</div>
+        </div>      
     </div>
    
 
